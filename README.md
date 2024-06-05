@@ -3,6 +3,7 @@
 # Tools and Libraries
 - Android View based system
 - MVVM architecture with feature pattern
+- Android Jetpack's Navigation
 - Retrofit
 - Kotlin Flows, LiveData & Coroutine
 - Dagger hilt
