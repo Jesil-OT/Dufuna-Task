@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#6576FF</color>
+
+    <color name="bold_text_color">#364A63</color>
+    <color name="semi_bold_text_color">#526484</color>
+    <color name="textfield_border_color">#8091A7</color>
+    <color name="red">#E85347</color>
+    <color name="dim_blue">#8091A7</color>
+    <color name="light_blue">#6576FF</color>
+    <color name="gray">#C4C4C4</color>
+    <color name="other_gray">#8091A7</color>
+    <color name="off_white">#F5F6FA</color>
+    <color name="yellow">#F4BD0E</color>
+    <color name="shimmer_item_color">#C2C2C2</color>
+    <color name="shimmer_color">#F3EFEF</color>
+
+</resources>

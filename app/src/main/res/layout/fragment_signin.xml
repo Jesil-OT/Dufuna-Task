@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/signin_button_state"
+    tools:context=".auth.presentation.SignInFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/login_welcome"
+        style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:text="@string/welcome_back"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/login_get_started"
+        style="@style/SemiBoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/get_started"
+        android:textSize="@dimen/semi_large_text_size"
+        app:layout_constraintEnd_toEndOf="@+id/login_welcome"
+        app:layout_constraintStart_toStartOf="@+id/login_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/login_welcome" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_username_input"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/extra_large_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:background="@drawable/textfield_background"
+        android:hint="@string/username"
+        android:textColorHint="@color/textfield_border_color"
+        app:hintTextColor="@color/textfield_border_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_get_started">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_username_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:inputType="textPersonName"
+            android:textColor="@color/bold_text_color"
+            android:textColorHint="@color/textfield_border_color" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_password_input"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:background="@drawable/textfield_background"
+        android:hint="@string/password"
+        android:textColorHint="@color/textfield_border_color"
+        app:hintTextColor="@color/textfield_border_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_username_input"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/textfield_border_color">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="textPassword"
+            android:textColor="@color/bold_text_color"
+            android:textColorHint="@color/textfield_border_color" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/remember_me"
+        android:textColor="@color/semi_bold_text_color"
+        app:buttonTint="@color/textfield_border_color"
+        app:layout_constraintStart_toStartOf="@+id/login_password_input"
+        app:layout_constraintTop_toBottomOf="@+id/login_password_input" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/forgot_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textAlignment="textEnd"
+        android:textColor="@color/red"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="@+id/login_password_input"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toTopOf="@+id/checkBox" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/signin_button_state"
+        android:enabled="false"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/forgot_password"
+        app:layout_constraintStart_toStartOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/contact_support"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:textAlignment="center"
+        android:textColor="@color/bold_text_color"
+        app:layout_constraintEnd_toEndOf="@+id/login_password_input"
+        app:layout_constraintStart_toStartOf="@+id/sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in"
+        tools:text="Don’t have an account? Contact Support" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/terms_and_agreement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:textAlignment="center"
+        android:textColor="@color/bold_text_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/login_password_input"
+        app:layout_constraintStart_toStartOf="@+id/sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/contact_support"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="By clicking ‘Sign in’ above you agree to Arocare’s Terms &amp; Conditions and Privacy Policy." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

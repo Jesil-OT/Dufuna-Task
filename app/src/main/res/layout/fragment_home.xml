@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".professional_home.presentation.HomeFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name"
+        style="@style/BoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/extra_large_padding"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/hi_george" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/clocked_in"
+        style="@style/SemiBoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/clocked_in"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        tools:visibility="visible" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/sub_text"
+        style="@style/SemiBoldText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/extra_large_margin"
+        android:text="@string/home_sub_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/notification"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="@dimen/notification_margin"
+        android:layout_height="@dimen/notification_margin"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:contentDescription="@string/notification_image"
+        android:src="@drawable/notification_available_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/sub_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clock_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:text="@string/clock_in"
+        android:textColor="@color/white"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/notification"
+        app:layout_constraintStart_toStartOf="@+id/sub_text"
+        app:layout_constraintTop_toBottomOf="@+id/sub_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/take_a_break"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_margin"
+        android:backgroundTint="@color/yellow"
+        android:text="@string/take_a_break"
+        android:textColor="@color/white"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/clock_out"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/sub_text" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/clock_out"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/large_margin"
+        android:backgroundTint="@color/red"
+        android:text="@string/clock_out"
+        android:textColor="@color/white"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/notification"
+        app:layout_constraintStart_toEndOf="@+id/take_a_break"
+        app:layout_constraintTop_toBottomOf="@+id/sub_text" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/clock_out_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="take_a_break, clock_out" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/home_categories_tab_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/clock_in"
+        app:layout_constraintStart_toStartOf="@+id/clock_in"
+        app:layout_constraintTop_toBottomOf="@+id/clock_in"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="4dp"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:tabTextColor="@color/other_gray" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/categories_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/home_categories_tab_layout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/home_categories_tab_layout"
+        app:layout_constraintTop_toBottomOf="@+id/home_categories_tab_layout"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".professional_home.presentation.categories.medication.MedicationFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medication_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/home_item" />
+
+    <include
+        android:id="@+id/shimmer_loading"
+        layout="@layout/shimmer_loading"
+        tools:visibility="gone"/>
+</FrameLayout>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CareSaaS</string>
+    <string name="welcome_back">Welcome back!👋</string>
+    <string name="get_started">Fill your details to get started</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="no_account">"Don’t have an account? Contact Support"</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="privacy_policy">By clicking ‘Sign in’ above you agree to Arocare’s <![CDATA[Terms & Conditions]]> and Privacy Policy</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="hi_george">Hi, George!</string>
+    <string name="home_sub_text">Clock-in to begin your task</string>
+    <string name="notification_image">notification image</string>
+    <string name="clock_in">Clock-in</string>
+    <string name="take_a_break">Take a Break</string>
+    <string name="clock_out">Clock-out</string>
+    <string name="signing_you_in">Signing you in…</string>
+    <string name="hi">Hi, %1$s!</string>
+    <string name="task_status_image">Task Status Image</string>
+    <string name="clocked_in">Clocked In</string>
+    <string name="medication">Medication</string>
+    <string name="activities">Activities</string>
+</resources>

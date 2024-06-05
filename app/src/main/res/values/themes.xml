@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DufunaTask" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/blue</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+
+    <style name="Theme.DufunaTask" parent="Base.Theme.DufunaTask" />
+
+    <style name="BoldText">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textColor">@color/bold_text_color</item>
+    </style>
+
+    <style name="SemiBoldText">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textColor">@color/semi_bold_text_color</item>
+    </style>
+</resources>
