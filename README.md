@@ -1,5 +1,5 @@
 # Dufuna Task
-### An android appliction that servers as a task assessment for Dufuna, Implemented with Login UI and Landing Page for the CareSaaS mobile application
+### An android application  that servers as a task assessment for Dufuna, Implemented with Login UI and Landing Page for the CareSaaS mobile application
 # Tools and Libraries
 - Android View based system
 - MVVM architecture with feature pattern
