@@ -8,19 +8,22 @@ import com.mobile.dufunatask.auth.data.models.signin_result.SignInData
 import com.mobile.dufunatask.auth.data.models.signin_result.SignInResult
 import com.mobile.dufunatask.auth.data.repo.SignInRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SignInViewModel @Inject constructor(
-    private val repo: SignInRepository
+    private val repo: SignInRepository,
+    private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _navAction = MutableSharedFlow<SignInNavigationEvent>()
@@ -34,7 +37,7 @@ class SignInViewModel @Inject constructor(
 
 
     fun signIn(username: String, password: String) = viewModelScope.launch {
-        repo.signIn(username, password)
+        repo.signIn(username, password).flowOn(ioDispatcher)
             .onStart {
                 _signInUserState.value = Result.Loading(Pair(false, "Signing you in…"))
             }

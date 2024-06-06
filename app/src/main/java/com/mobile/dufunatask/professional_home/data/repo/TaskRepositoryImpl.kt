@@ -15,7 +15,7 @@ class TaskRepositoryImpl @Inject constructor(
     private val userId: Int
 ) : TaskRepository {
 
-    override suspend fun getMedicationTask(): Flow<SignInResult<List<TaskData>>> = flow {
+    override suspend fun getMedicationTask() = flow {
         val medicationTask = taskService.getTask(
             token = token,
             shortCode = SHORT_CODE,
@@ -25,7 +25,7 @@ class TaskRepositoryImpl @Inject constructor(
         emit(medicationTask)
     }
 
-    override suspend fun getActivitiesTask(): Flow<SignInResult<List<TaskData>>> = flow {
+    override suspend fun getActivitiesTask() = flow {
         val activityTask = taskService.getTask(
             token = token,
             shortCode = SHORT_CODE,

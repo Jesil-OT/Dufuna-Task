@@ -10,15 +10,18 @@ import com.mobile.dufunatask.auth.presentation.processNetworkError
 import com.mobile.dufunatask.professional_home.data.models.task_result.TaskData
 import com.mobile.dufunatask.professional_home.data.repo.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ActivitiesViewModel @Inject constructor(
-    private val taskRepo: TaskRepository
+    private val taskRepo: TaskRepository,
+    private val ioDispatcher: CoroutineDispatcher
 ) : ViewModel() {
 
     private val _activitiesTasks = MutableLiveData<Result<SignInResult<List<TaskData>>>>()
@@ -29,7 +32,8 @@ class ActivitiesViewModel @Inject constructor(
     }
 
     private fun getActivitiesTasks() = viewModelScope.launch {
-        taskRepo.getActivitiesTask().onStart {
+        taskRepo.getActivitiesTask().flowOn(ioDispatcher)
+            .onStart {
             _activitiesTasks.value = Result.Loading(Pair(true, null))
         }.catch {
             _activitiesTasks.value = Result.Error(message = it.processNetworkError())
